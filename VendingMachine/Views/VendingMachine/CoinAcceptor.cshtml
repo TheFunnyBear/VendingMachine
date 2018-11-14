@@ -1,0 +1,32 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">Монетоприёмник</div>
+        <div class="panel-body">
+            <p>Баланс:</p>
+            <p class="customfont">{{ balance.TextValue }}</p>
+
+            <p>Внести монты:</p>
+
+            <div class="row">
+                <div ng-repeat="cashBoxSlot in cashBox">
+                    <div class="column">
+                        <div class="card mb-5 shadow-sm">
+
+                            <button class="btn btn-block btn-default" ng-click="insetCoin(cashBoxSlot.CoinSlotType)" ng-show="cashBoxSlot.IsEnable">
+                                <img width="40" height="40" src='@Url.Action("show", "Image")?id={{cashBoxSlot.CoinSlotType.PictureId}}' />
+                                {{cashBoxSlot.CoinSlotType.Name}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Выдать сдачу:</p>
+            <button class="btn btn-lg btn-block btn-info" ng-click="takeChange()">
+                <span class="glyphicon glyphicon glyphicon-ruble" width="30" aria-hidden="true"></span>
+                Сдача
+            </button>
+
+        </div>
+    </div>
+</div>

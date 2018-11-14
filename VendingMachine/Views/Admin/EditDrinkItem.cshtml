@@ -1,0 +1,61 @@
+﻿<div class="column2">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">ID {{storeItem.Id}}, Напиток: {{storeItem.Drink.Name}}</div>
+            <div class="panel-body">
+                <table border="0" align="center" cellpadding="5" cellspacing="0">
+                    <tr align="center">
+                        <td colspan="2" align="center">
+                            <img ng-show="storeItem.Drink.PictureId > 0" width="100"  src='@Url.Action("Show", "Image")?id={{storeItem.Drink.PictureId}}' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Название:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="storeItem.Drink.Name" ng-disabled="!storeItem.IsEdited" required ng-trim="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Цена:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="storeItem.Drink.Price.Amount" ng-show="storeItem.IsEdited" required ng-trim="false">
+                            <input type="text" name="input" ng-model="storeItem.Drink.Price.TextValue" ng-show="!storeItem.IsEdited" ng-disabled="true" required ng-trim="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Количество:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="storeItem.Quantity" ng-disabled="!storeItem.IsEdited" required ng-trim="false">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="40%">Укажите файл с фотографией: </td>
+                        <td width="60%">
+                            <input type="file" ng-disabled="!storeItem.IsEdited" ngf-select ng-model="picFile" name="file"
+                                   accept="image/*" ngf-max-size="2MB" required
+                                   ngf-model-invalid="errorFile">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-footer">
+
+                <button class="btn btn-block btn-success" ng-hide="!storeItem.IsEdited" ng-click="applyStoreItem(storeItem.Id, storeItem.Drink.Name, storeItem.Drink.Price.Amount, storeItem.Quantity, picFile)">
+                    Применить
+                    <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                </button>
+
+                <button class="btn btn-block btn-warning" ng-hide="storeItem.IsEdited" ng-click="editStoreItem(storeItem.Id)">
+                    Редактировать
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button>
+
+                <button ng-click="deleteStoreItem(storeItem.Id)" class="btn btn-block btn-danger">
+                    Удалить
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

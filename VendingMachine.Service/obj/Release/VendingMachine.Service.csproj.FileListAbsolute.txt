@@ -1,0 +1,16 @@
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.Service.dll
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.Service.pdb
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.DataAccessLayer.dll
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.Model.dll
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\EntityFramework.dll
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\Newtonsoft.Json.dll
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.DataAccessLayer.pdb
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.DataAccessLayer.dll.config
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\VendingMachine.Model.pdb
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\EntityFramework.xml
+C:\WORK\VendingMachine\VendingMachine.Service\bin\Release\Newtonsoft.Json.xml
+C:\WORK\VendingMachine\VendingMachine.Service\obj\Release\VendingMachine.Service.csprojAssemblyReference.cache
+C:\WORK\VendingMachine\VendingMachine.Service\obj\Release\VendingMachine.Service.csproj.CoreCompileInputs.cache
+C:\WORK\VendingMachine\VendingMachine.Service\obj\Release\VendingMachine.Service.csproj.CopyComplete
+C:\WORK\VendingMachine\VendingMachine.Service\obj\Release\VendingMachine.Service.dll
+C:\WORK\VendingMachine\VendingMachine.Service\obj\Release\VendingMachine.Service.pdb

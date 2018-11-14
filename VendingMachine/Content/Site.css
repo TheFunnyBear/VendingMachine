@@ -1,0 +1,108 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.container {
+    max-width: 960px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    align-content: center;
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column3 {
+    align-content: center;
+    float: left;
+    width: 33%;
+    padding: 10px;
+}
+
+.column2 {
+    align-content: center;
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@font-face {
+    font-family: "DSEG14Modern Font";
+    src: url("Fonts/DSEG14Modern-Regular.ttf") format("truetype");
+}
+
+p.customfont {
+    text-align: center;
+    display: inline;
+    background-color: orange;
+    padding: 5px;
+    font-size: 32px;
+    color: black;
+    font-family: "DSEG14Modern Font", Verdana, Tahoma;
+}
+
+.col-xs-1-10,
+.col-sm-1-10 {
+    position: relative;
+    min-height: 1px;
+}
+
+.col-xs-1-10 {
+    width: 10%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-1-10 {
+        width: 10%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-1-10 {
+        width: 10%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-1-10 {
+        width: 10%;
+        float: left;
+    }
+}

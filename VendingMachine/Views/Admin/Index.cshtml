@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Администрирование";
+}
+
+<div ng-app="VendingMachine">
+    <div ng-controller="VendingMachineAdminController">
+        <div ng-init="updateVendingMachineAdmin()"></div>
+        @Html.Partial("EditAdminKey")
+        @Html.Partial("EditCashBox")
+        @Html.Partial("EditShopWindow")
+    </div>
+</div>

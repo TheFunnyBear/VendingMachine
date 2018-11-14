@@ -1,0 +1,61 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">Управление монетоприёмником</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div ng-repeat="cashBoxSlot in cashBox">
+                        @Html.Partial("EditCashBoxSlot")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <btn ng-click="create()" class="btn btn-success">
+                Добавить слот для монет
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </btn>
+
+            <!-- Trigger the modal with a button -->
+            <btn class="btn btn-info" data-toggle="modal" data-target="#modalImportCoins">
+                Импортировать
+                <span class="glyphicon glyphicon-import" width="30" aria-hidden="true"></span>
+            </btn>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalImportCoins" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Импорт монет</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Выбирите файл для импорта монет.</p>
+                            <input type="file" ngf-select ng-model="uploadJsonFile" name="file"
+                                   accept="application/json" ngf-max-size="2MB" required
+                                   ngf-model-invalid="errorFile">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+
+                            <button class="btn btn-success" ng-click="import(uploadJsonFile)" data-dismiss="modal">
+                                Импортировать
+                                <span class="glyphicon glyphicon-import" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <btn ng-click="export()" class="btn btn-info">
+                Экспортировать
+                <span class="glyphicon glyphicon-export" width="30" aria-hidden="true"></span>
+            </btn>
+        </div>
+    </div>
+</div>

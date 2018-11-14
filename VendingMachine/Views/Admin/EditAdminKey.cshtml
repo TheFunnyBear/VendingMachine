@@ -1,0 +1,17 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">Управление доступом</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <p>Ключ доступа:</p>
+                <input type="text" name="input" size="90" ng-model="adminKey.Key" required ng-trim="false">
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-success" ng-click="changeAdminKey(adminKey.Key)">
+                Заменить ключ
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</div>

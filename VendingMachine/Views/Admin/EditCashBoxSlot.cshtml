@@ -1,0 +1,67 @@
+﻿<div class="column2">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">ID {{cashBoxSlot.Id}}, Монета: {{cashBoxSlot.CoinSlotType.Name}}</div>
+            <div class="panel-body">
+                <table border="0" align="center" cellpadding="5" cellspacing="0">
+                    <tr align="center">
+                        <td colspan="2" align="center">
+                            <img ng-show="cashBoxSlot.CoinSlotType.PictureId > 0" width="40" height="40" src='@Url.Action("Show", "Image")?id={{cashBoxSlot.CoinSlotType.PictureId}}' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Название:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="cashBoxSlot.CoinSlotType.Name" ng-disabled="!cashBoxSlot.IsEdited" required ng-trim="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Номинал:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="cashBoxSlot.CoinSlotType.Nominal.Amount" ng-show="cashBoxSlot.IsEdited" required ng-trim="false">
+                            <input type="text" name="input" ng-model="cashBoxSlot.CoinSlotType.Nominal.TextValue" ng-show="!cashBoxSlot.IsEdited" ng-disabled="true" required ng-trim="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Количество:</td>
+                        <td width="60%">
+                            <input type="text" name="input" ng-model="cashBoxSlot.Quantity" ng-disabled="!cashBoxSlot.IsEdited" required ng-trim="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Приём монет заблокирован:</td>
+                        <td width="60%">
+                            <input type="checkbox" ng-model="cashBoxSlot.IsDisable" ng-disabled="!cashBoxSlot.IsEdited">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="40%">Укажите файл с фотографией: </td>
+                        <td width="60%">
+                            <input type="file" ng-disabled="!cashBoxSlot.IsEdited" ngf-select ng-model="picFile" name="file"
+                                   accept="image/*" ngf-max-size="2MB" required
+                                   ngf-model-invalid="errorFile">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-footer">
+
+                <button class="btn btn-block btn-success" ng-hide="!cashBoxSlot.IsEdited" ng-click="apply(cashBoxSlot.Id, cashBoxSlot.CoinSlotType.Name, cashBoxSlot.CoinSlotType.Nominal.Amount, cashBoxSlot.Quantity, cashBoxSlot.IsDisable, picFile)">
+                    Применить
+                    <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                </button>
+
+                <button class="btn btn-block btn-warning" ng-hide="cashBoxSlot.IsEdited" ng-click="edit(cashBoxSlot.Id)">
+                    Редактировать
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button>
+
+                <button ng-click="delete(cashBoxSlot.Id)" class="btn btn-block btn-danger">
+                    Удалить
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

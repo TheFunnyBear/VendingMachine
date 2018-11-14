@@ -1,0 +1,31 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">Витрина</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div ng-repeat="productItem in store">
+                        <div class="column" ng-show="productItem.Quantity > 0">
+                            <div class="card mb-4 shadow-sm">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><strong>{{productItem.Drink.Name}}</strong></div>
+                                    <div class="panel-body">
+                                        <p>Количество: {{productItem.Quantity}} штук</p>
+                                        <p><img width="150" height="200" src='@Url.Action("show", "Image")?id={{productItem.Drink.PictureId}}' /></p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="button" class="btn btn-lg btn-block btn-success" ng-click="buy(productItem.Id)" ng-show="productItem.Drink.Price.Amount <= balance.Amount">Купить {{productItem.Product.Price.TextValue}}</button>
+                                        <button type="button" class="btn btn-lg btn-block btn-danger" ng-show="productItem.Drink.Price.Amount > balance.Amount">{{productItem.Drink.Price.TextValue}}</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>

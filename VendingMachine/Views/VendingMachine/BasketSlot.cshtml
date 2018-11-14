@@ -1,0 +1,29 @@
+﻿<div class="panel-group" ng-show="basket.IsBasketNotEmpty">
+    <div class="panel panel-default">
+        <div class="panel-heading">Ваша покупка:</div>
+        <div class="panel-body">
+            <div class="row">
+                <div ng-repeat="basketItem in basket.Basket">
+                    <div class="column">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><strong>{{basketItem.Name}}</strong></div>
+                                    <div class="panel-body">
+                                        <p><img width="150" height="200" src='@Url.Action("show", "Image")?id={{basketItem.PictureId}}' /></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a class="btn btn-lg btn-block btn-success" ng-click="clearBasket()">
+                Забрать покупки
+                <span class="glyphicon glyphicon-hand-right" width="30" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</div>

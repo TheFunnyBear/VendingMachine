@@ -1,0 +1,63 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">Управление напитками в ветрине</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div ng-repeat="storeItem in storeItems">
+                        @Html.Partial("EditDrinkItem")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <btn ng-click="createDrink()" class="btn btn-success">
+                Добавить новый напиток
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </btn>
+
+            <!-- Trigger the modal with a button -->
+            <btn class="btn btn-info" data-toggle="modal" data-target="#modalImportDrinks">
+                Импортировать
+                <span class="glyphicon glyphicon-import" width="30" aria-hidden="true"></span>
+            </btn>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalImportDrinks" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Импорт напитков</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Выбирите файл для импорта напитков.</p>
+                            
+                            <input type="file" ngf-select ng-model="uploadDrinkImportJsonFile" name="file"
+                                   accept="application/json" ngf-max-size="2MB" required
+                                   ngf-model-invalid="errorFile">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+
+                            <button class="btn btn-success" ng-click="importDrinks(uploadDrinkImportJsonFile)" data-dismiss="modal">
+                                Импортировать
+                                <span class="glyphicon glyphicon-import" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <btn ng-click="exportDrinks()" class="btn btn-info">
+                Экспортировать
+                <span class="glyphicon glyphicon-export" width="30" aria-hidden="true"></span>
+            </btn>
+        </div>
+    </div>
+</div>

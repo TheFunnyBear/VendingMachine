@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Автомат по продаже напитков";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+<div ng-app="VendingMachineModule">
+    <div ng-controller="VendingMachineController">
+        <div ng-init="updateBoard()"></div>
+
+        <!-- Coin acceptor-->
+        @Html.Partial("CoinAcceptor")
+
+        <!-- Change slot-->
+        @Html.Partial("ChangeSlot")
+
+        <!-- Basket slot-->
+        @Html.Partial("BasketSlot")
+
+        <!--Shop window-->
+        @Html.Partial("ShopWindow")
+    </div>
+</div>
+
